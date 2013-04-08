@@ -14,7 +14,9 @@ public class newInstance implements FREFunction{
 		
 		try {
 			int joId = arg1[0].getAsInt();
+			
 			JavaObject jo = JavaObject.getJavaObject(joId);
+			
 			if (jo!=null&&jo instanceof JavaClass) {
 				AndroidBridgeArg result = ((JavaClass)jo).newInstance();
 				if (result!=null) {

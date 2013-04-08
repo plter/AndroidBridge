@@ -40,6 +40,10 @@ package com.plter.androidbridge.lang
 			return AndroidBridge.androidBridge.getRelatedObjectField(id,fieldName);
 		}
 		
+		public function dispose():void{
+			AndroidBridge.androidBridge.disposeRelatedObjectObject(id);
+		}
+		
 		
 		/**
 		 * 子类重写此方法用于不同的创建操作

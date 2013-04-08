@@ -10,6 +10,7 @@ package com.plter.androidbridge;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.plter.androidbridge.lang.JavaClass;
 import com.plter.androidbridge.lang.JavaObject;
 
 public class AndroidBridgeArg {
@@ -135,6 +136,8 @@ public class AndroidBridgeArg {
 			return new AndroidBridgeArg(TYPE_BOOLEAN, obj);
 		}else if (obj instanceof JavaObject) {
 			return new AndroidBridgeArg((JavaObject) obj);
+		}else if (obj instanceof Class<?>) {
+			return new AndroidBridgeArg(new JavaClass((Class<?>) obj));
 		}else{
 			return new AndroidBridgeArg(new JavaObject(obj));
 		}
