@@ -2,6 +2,21 @@
 <flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
   <includeClasses>
     <classEntry path="com.plter.androidbridge.AndroidBridge"/>
+    <classEntry path="com.plter.androidbridge.AndroidBridgeEvent"/>
+    <classEntry path="com.plter.androidbridge.AndroidBridgeArg"/>
+    <classEntry path="com.plter.androidbridge.lang.JavaInterfaceImpl"/>
+    <classEntry path="com.plter.androidbridge.lang.JavaIntefaceImplCallbackData"/>
+    <classEntry path="com.plter.androidbridge.lang.JavaObject"/>
+    <classEntry path="com.plter.androidbridge.errors.ErrorUnsupportedOpration"/>
+    <classEntry path="com.plter.androidbridge.lang.JavaClass"/>
+    <classEntry path="com.plter.androidbridge.android.content.Context"/>
+    <classEntry path="com.plter.androidbridge.android.content.ContextWrapper"/>
+    <classEntry path="com.plter.androidbridge.android.view.ContextThemeWrapper"/>
+    <classEntry path="com.plter.androidbridge.android.app.Activity"/>
+    <classEntry path="com.plter.androidbridge.android.app.AlertDialogBuilder"/>
+    <classEntry path="com.plter.androidbridge.java.lang.ClassLoader"/>
+    <classEntry path="com.plter.androidbridge.dalvik.system.BaseDexClassLoader"/>
+    <classEntry path="com.plter.androidbridge.dalvik.system.DexClassLoader"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

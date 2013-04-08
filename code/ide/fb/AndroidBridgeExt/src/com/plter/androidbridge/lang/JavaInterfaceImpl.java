@@ -1,3 +1,10 @@
+/**
+ * 
+ * @author plter 
+ * website http://plter.com http://plter.sinaapp.com
+ * email xtiqin@163.com
+ */
+
 package com.plter.androidbridge.lang;
 
 import java.lang.reflect.InvocationHandler;
@@ -9,7 +16,7 @@ import org.json.JSONObject;
 
 import com.plter.androidbridge.AndroidBridge;
 import com.plter.androidbridge.AndroidBridgeArg;
-import com.plter.androidbridge.events.Event;
+import com.plter.androidbridge.AndroidBridgeEvent;
 
 public class JavaInterfaceImpl {
 
@@ -32,7 +39,7 @@ public class JavaInterfaceImpl {
 				}
 				jo.put("args", ja);
 				
-				AndroidBridge.getContext().dispatchStatusEventAsync(Event.JAVA_INTERFACE_IMPL_CALLBACK, jo.toString());
+				AndroidBridge.getContext().dispatchStatusEventAsync(AndroidBridgeEvent.JAVA_INTERFACE_IMPL_CALLBACK, jo.toString());
 				return null;
 			}
 		});

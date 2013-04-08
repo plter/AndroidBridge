@@ -1,3 +1,10 @@
+/**
+ * 
+ * @author plter 
+ * website http://plter.com http://plter.sinaapp.com
+ * email xtiqin@163.com
+ */
+
 package com.plter.androidbridge.lang;
 
 import java.lang.reflect.Field;
@@ -89,7 +96,7 @@ public class JavaObject {
 			if (method.getName().equals(methodName)) {
 				paramTypes = method.getParameterTypes();
 				if (paramTypes.length==args.length) {
-
+					
 					methodMatch = true;
 					for (int i = 0; i < paramTypes.length; i++) {
 						paramType = paramTypes[i];
@@ -121,7 +128,7 @@ public class JavaObject {
 							}
 						}else if (argType==AndroidBridgeArg.TYPE_JAVA_INTERFACE_IMPL) {
 							if (paramType.isInterface()) {
-								argsForSend[i] = new JavaInterfaceImpl(args[i].getJavaInterfaceImplId(), paramType);
+								argsForSend[i] = new JavaInterfaceImpl(args[i].getJavaInterfaceImplId(), paramType).getProxyInstance();
 								continue;
 							}else{
 								methodMatch=false;
@@ -134,6 +141,9 @@ public class JavaObject {
 								methodMatch=false;
 								break;
 							}
+						}else if(argType == AndroidBridgeArg.TYPE_NULL){
+							argsForSend[i]=null;
+							continue;
 						}else{
 							if (paramType.isAssignableFrom(argsForSend[i].getClass())) {
 								continue;

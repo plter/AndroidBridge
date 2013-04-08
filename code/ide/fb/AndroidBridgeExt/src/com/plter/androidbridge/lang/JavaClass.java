@@ -1,3 +1,10 @@
+/**
+ * 
+ * @author plter 
+ * website http://plter.com http://plter.sinaapp.com
+ * email xtiqin@163.com
+ */
+
 package com.plter.androidbridge.lang;
 
 import java.lang.reflect.Constructor;
@@ -29,6 +36,7 @@ public class JavaClass extends JavaObject {
 
 
 	public AndroidBridgeArg newInstanceWithArgs(AndroidBridgeArg[] args){
+		
 		Object[] argsForSend = new Object[args.length];
 		for (int i = 0; i < argsForSend.length; i++) {
 			if (args[i].getType()!=AndroidBridgeArg.TYPE_JAVA_INTERFACE_IMPL&&args[i].getType()!=AndroidBridgeArg.TYPE_ARG_ARRAY) {
@@ -75,7 +83,7 @@ public class JavaClass extends JavaObject {
 						}
 					}else if (argType==AndroidBridgeArg.TYPE_JAVA_INTERFACE_IMPL) {
 						if (paramType.isInterface()) {
-							argsForSend[i] = new JavaInterfaceImpl(args[i].getJavaInterfaceImplId(), paramType);
+							argsForSend[i] = new JavaInterfaceImpl(args[i].getJavaInterfaceImplId(), paramType).getProxyInstance();
 							continue;
 						}else{
 							methodMatch=false;
@@ -88,6 +96,9 @@ public class JavaClass extends JavaObject {
 							methodMatch=false;
 							break;
 						}
+					}else if(argType == AndroidBridgeArg.TYPE_NULL){
+						argsForSend[i]=null;
+						continue;
 					}else{
 						if (paramType.isAssignableFrom(argsForSend[i].getClass())) {
 							continue;
@@ -97,6 +108,7 @@ public class JavaClass extends JavaObject {
 						}
 					}
 				}
+				
 
 				if (methodMatch) {
 					try {

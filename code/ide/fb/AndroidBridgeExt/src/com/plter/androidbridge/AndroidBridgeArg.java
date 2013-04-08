@@ -1,3 +1,10 @@
+/**
+ * 
+ * @author plter 
+ * website http://plter.com http://plter.sinaapp.com
+ * email xtiqin@163.com
+ */
+
 package com.plter.androidbridge;
 
 import org.json.JSONException;
@@ -20,6 +27,8 @@ public class AndroidBridgeArg {
 	
 	public AndroidBridgeArg(JavaObject jo) {
 		type= TYPE_JAVA_OBJECT;
+		value = jo.getId();
+		
 		javaObject = jo;
 		javaObjectId = jo.getId();
 	}
@@ -43,7 +52,7 @@ public class AndroidBridgeArg {
 	public Object getRelatedValue() {
 		if (relatedValue==null) {
 			if (type==TYPE_JAVA_OBJECT) {
-				relatedValue = getJavaObject();
+				relatedValue = getJavaObject().getRelatedObject();
 			}else{
 				relatedValue = value;
 			}
