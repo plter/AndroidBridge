@@ -5,12 +5,12 @@
  * email xtiqin@163.com
  */
 
-
-
 package com.plter.androidbridge.android.app
 {
 	import com.plter.androidbridge.AndroidBridge;
 	import com.plter.androidbridge.android.view.ContextThemeWrapper;
+	import com.plter.androidbridge.android.view.View;
+	import com.plter.androidbridge.android.view.ViewGroupLayoutParams;
 	import com.plter.androidbridge.lang.JavaObject;
 	
 	import flash.filesystem.File;
@@ -20,6 +20,15 @@ package com.plter.androidbridge.android.app
 		public function Activity(id:int=0, relatedJavaClassName:String=null)
 		{
 			super(id, relatedJavaClassName);
+		}
+		
+		public function setContentView(view:View):void{
+			callRelatedObjectMethod("setContentView",view);
+		}
+		
+		
+		public function addContentView(view:View,lp:ViewGroupLayoutParams):void{
+			callRelatedObjectMethod("addContentView",view,lp);
 		}
 		
 		

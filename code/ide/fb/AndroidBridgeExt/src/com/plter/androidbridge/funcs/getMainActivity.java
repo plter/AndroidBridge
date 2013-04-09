@@ -1,3 +1,11 @@
+/**
+ * 
+ * @author plter 
+ * website http://plter.com http://plter.sinaapp.com
+ * email xtiqin@163.com
+ */
+
+
 package com.plter.androidbridge.funcs;
 
 import org.json.JSONException;

@@ -1,3 +1,11 @@
+/**
+ * 
+ * @author plter 
+ * website http://plter.com http://plter.sinaapp.com
+ * email xtiqin@163.com
+ */
+
+
 package com.plter.androidbridge.java.lang
 {
 	import com.plter.androidbridge.lang.JavaClass;
@@ -12,7 +20,7 @@ package com.plter.androidbridge.java.lang
 		
 		
 		public static function getSystemClassLoader():ClassLoader{
-			return new ClassLoader(JavaObject(getJavaClass().callRelatedObjectStaticMethod("getSystemClassLoader")).id);
+			return new ClassLoader(JavaObject(getRelatedJavaClass().callRelatedObjectStaticMethod("getSystemClassLoader")).id);
 		}
 		
 		
@@ -38,7 +46,7 @@ package com.plter.androidbridge.java.lang
 		private const classDefMap:Object = {};
 		
 		
-		public static function getJavaClass():JavaClass{
+		public static function getRelatedJavaClass():JavaClass{
 			if (_javaClass==null) 
 			{
 				_javaClass = JavaClass.findClass("java.lang.ClassLoader");

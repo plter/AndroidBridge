@@ -77,6 +77,9 @@ package com.plter.androidbridge
 		
 		
 		public function callRelatedObjectMethod(id:int,methodName:String,... args):Object{
+			
+//			trace("call method "+methodName,"arg len "+args.length);
+			
 			var argsForSend:Array=[];
 			argsForSend.push("callRelatedObjectMethod",id,methodName);
 			
@@ -105,6 +108,7 @@ package com.plter.androidbridge
 		}
 		
 		public function callRelatedObjectStaticMethod(id:int,methodName:String,... args):Object{
+			
 			var argsForSend:Array=[];
 			argsForSend.push("callRelatedObjectStaticMethod",id,methodName);
 			

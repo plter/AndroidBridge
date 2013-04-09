@@ -80,7 +80,7 @@ public class JavaObject {
 	}
 
 	AndroidBridgeArg callMethodOnObject(Object obj,String methodName,Method[] methodsForSearch,AndroidBridgeArg[] args){
-
+		
 		Object[] argsForSend = new Object[args.length];
 		for (int i = 0; i < argsForSend.length; i++) {
 			if (args[i].getType()!=AndroidBridgeArg.TYPE_JAVA_INTERFACE_IMPL&&args[i].getType()!=AndroidBridgeArg.TYPE_ARG_ARRAY) {
@@ -94,8 +94,11 @@ public class JavaObject {
 		int argType = 0;
 		for (Method method : methodsForSearch) {
 			if (method.getName().equals(methodName)) {
+				
 				paramTypes = method.getParameterTypes();
+				
 				if (paramTypes.length==args.length) {
+					
 					
 					methodMatch = true;
 					for (int i = 0; i < paramTypes.length; i++) {
@@ -145,6 +148,7 @@ public class JavaObject {
 							argsForSend[i]=null;
 							continue;
 						}else{
+							
 							if (paramType.isAssignableFrom(argsForSend[i].getClass())) {
 								continue;
 							}else{

@@ -10,19 +10,29 @@
 package com.plter.androidbridge.lang
 {
 	import com.plter.androidbridge.AndroidBridge;
+	import com.plter.androidbridge.errors.ErrorCannotCreateInstance;
 	
 
 	public class JavaObject
 	{
 		public function JavaObject(id:int=0,relatedJavaClassName:String=null)
 		{
-			_id = id;
-			_relatedJavaClassName = relatedJavaClassName;
-			
-			var jo:JavaObject = onCreateJavaObject();
-			if (jo!=null) 
+			if (id>0) 
 			{
-				_id = jo.id;
+				_id = id;
+			}else if (relatedJavaClassName!=null) 
+			{
+				_relatedJavaClassName = relatedJavaClassName;
+				
+				var jo:JavaObject = onCreateJavaObject();
+				if (jo!=null) 
+				{
+					_id = jo.id;
+				}else{
+					throw new ErrorCannotCreateInstance("无法创建该实例");
+				}
+			}else{
+				throw new ErrorCannotCreateInstance("既没有指定id，又没有指定类名，所以无法创建该实例");
 			}
 		}
 		
@@ -68,7 +78,7 @@ package com.plter.androidbridge.lang
 		}
 
 		
-		public function getJavaClass():JavaClass{
+		public function getRelatedJavaClass():JavaClass{
 			if (relatedJavaClassName==null) 
 			{
 				return null;

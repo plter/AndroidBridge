@@ -1,3 +1,11 @@
+/**
+ * 
+ * @author plter 
+ * website http://plter.com http://plter.sinaapp.com
+ * email xtiqin@163.com
+ */
+
+
 package com.plter.androidbridge.android.app
 {
 	import com.plter.androidbridge.android.content.Context;
@@ -40,7 +48,7 @@ package com.plter.androidbridge.android.app
 		}
 
 		override protected function onCreateJavaObject():JavaObject{
-			return getJavaClass().newInstanceWithArgs(context);
+			return getRelatedJavaClass().newInstanceWithArgs(context);
 		}
 		
 		private var _context:Context=null;

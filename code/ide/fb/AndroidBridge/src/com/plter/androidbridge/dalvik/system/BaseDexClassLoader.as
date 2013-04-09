@@ -1,3 +1,11 @@
+/**
+ * 
+ * @author plter 
+ * website http://plter.com http://plter.sinaapp.com
+ * email xtiqin@163.com
+ */
+
+
 package com.plter.androidbridge.dalvik.system
 {
 	import com.plter.androidbridge.java.lang.ClassLoader;

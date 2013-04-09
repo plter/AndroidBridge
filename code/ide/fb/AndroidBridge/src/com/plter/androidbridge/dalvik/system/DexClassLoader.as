@@ -1,3 +1,11 @@
+/**
+ * 
+ * @author plter 
+ * website http://plter.com http://plter.sinaapp.com
+ * email xtiqin@163.com
+ */
+
+
 package com.plter.androidbridge.dalvik.system
 {
 	import com.plter.androidbridge.java.lang.ClassLoader;
@@ -16,7 +24,7 @@ package com.plter.androidbridge.dalvik.system
 		}
 		
 		override protected function onCreateJavaObject():JavaObject{
-			return getJavaClass().newInstanceWithArgs(_dexPath,_optimizedDirectory,_libraryPath,_parent);
+			return getRelatedJavaClass().newInstanceWithArgs(_dexPath,_optimizedDirectory,_libraryPath,_parent);
 		}
 		
 		private var _dexPath:String=null;

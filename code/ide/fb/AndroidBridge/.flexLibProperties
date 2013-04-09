@@ -17,6 +17,17 @@
     <classEntry path="com.plter.androidbridge.java.lang.ClassLoader"/>
     <classEntry path="com.plter.androidbridge.dalvik.system.BaseDexClassLoader"/>
     <classEntry path="com.plter.androidbridge.dalvik.system.DexClassLoader"/>
+    <classEntry path="com.plter.androidbridge.android.view.View"/>
+    <classEntry path="com.plter.androidbridge.android.view.ViewGroup"/>
+    <classEntry path="com.plter.androidbridge.android.view.ViewGroupLayoutParams"/>
+    <classEntry path="com.plter.androidbridge.errors.ErrorCannotCreateInstance"/>
+    <classEntry path="com.plter.androidbridge.android.widget.LinearLayout"/>
+    <classEntry path="com.plter.androidbridge.android.widget.FrameLayout"/>
+    <classEntry path="com.plter.androidbridge.android.widget.RelativeLayout"/>
+    <classEntry path="com.plter.androidbridge.android.view.ViewGroupMarginLayoutParams"/>
+    <classEntry path="com.plter.androidbridge.android.widget.RelativeLayoutLayoutParams"/>
+    <classEntry path="com.plter.androidbridge.android.widget.TextView"/>
+    <classEntry path="com.plter.androidbridge.android.widget.Button"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>
