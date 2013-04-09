@@ -68,7 +68,7 @@ package
 			ll.addView(btn,-1,-2);
 			btn.setText("Button 2");
 			btn.setOnClickListener(new JavaInterfaceImpl(function(data:JavaIntefaceImplCallbackData):void{
-				new AlertDialogBuilder(Activity.getMainActivity()).setMessage("Haha").setPositiveButton("OK",null).show();
+				new AlertDialogBuilder(Activity.getMainActivity()).setTitle("标题").setMessage("Haha").setPositiveButton("OK",null).show();
 			}));
 		}
 	}
